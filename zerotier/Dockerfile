@@ -20,6 +20,7 @@ RUN \
     && apk add --no-cache \
         libgcc=13.2.1_git20231014-r0 \
         libstdc++=13.2.1_git20231014-r0 \
+        python3=3.11.4-r0 \
     \
     && git clone --branch "${ZERO_TIER_ONE_VERSION}" --depth=1 \
         "https://github.com/zerotier/ZeroTierOne.git" /tmp/zerotier \
@@ -64,3 +65,10 @@ LABEL \
     org.opencontainers.image.created=${BUILD_DATE} \
     org.opencontainers.image.revision=${BUILD_REF} \
     org.opencontainers.image.version=${BUILD_VERSION}
+
+COPY requirements.txt /requirements.txt
+COPY publish_address.py /publish_address.py
+COPY run.sh /run.sh
+RUN chmod a+x /run.sh
+
+CMD ["/run.sh"]
