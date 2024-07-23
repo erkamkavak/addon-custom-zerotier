@@ -1,9 +1,9 @@
 ---
-name: ZeroTier One
+name: Custom ZeroTier
 version: dev
-slug: zerotier
-description: Radically simplify your network with a virtual networking layer that works the same everywhere
-url: https://github.com/hassio-addons/addon-zerotier
+slug: custom_zerotier
+description: Simplify your network
+url: https://github.com/erkamkavak/addon-custom-zerotier
 codenotary: codenotary@frenck.dev
 startup: services
 init: false
